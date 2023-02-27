@@ -1,0 +1,53 @@
+# Binaries
+**/bin/
+!vendor/bin/premake/
+!Hana/vendor/assimp/bin
+!Hana/vendor/mono/bin
+bin-int/
+obj/
+**/cache/**
+Hana/vendor/VulkanSDK
+Hananut/Resources/Scripts/Hana-ScriptCore.dll
+Hananut/Resources/Scripts/Hana-ScriptCore.pdb
+Intermediates/
+Binaries
+Hananut/Resources/Scripts/
+__pycache__
+
+# Hananut ApplicationSettings
+Hananut/Config/ApplicationSettings.yaml
+
+# Visual Studio files and folder
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+**.csproj
+**.nsight-gfxproj
+**.DotSettings
+**.user
+
+# LFS Folders
+lfs/
+hooks/
+
+# Meta Files
+**.meta
+
+# Log files
+**.log
+
+# Auto saves
+*.auto
+
+# Dumps
+*.nvdbg
+*.nv-gpudmp
+*gpudmp.json
+
+# Folder Exceptions
+!Hananut/SandboxProject/Assets/Scripts/Binaries
+
+# File Exceptions
+!AssetRegistryCache.hzr
