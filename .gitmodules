@@ -1,0 +1,3 @@
+[submodule "Hana/vendor/spdlog"]
+	path = Hana/vendor/spdlog
+	url = https://github.com/gabime/spdlog
