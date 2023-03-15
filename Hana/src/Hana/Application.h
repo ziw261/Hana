@@ -16,5 +16,3 @@ namespace Hana
 	// To be defined in the client
 	Application* CreateApplication();
 }
-
-
