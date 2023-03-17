@@ -28,18 +28,15 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: set up premake and add to path
-    - uses: abel0b/setup-premake@v2.2
-      with:
-        version: "5.0.0-beta2"
-        
-    - name: configure
-      run: premake5 gmake2
+    - name: Checkout Repository
+    - uses: actions/checkout@v3
         
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Run Premake5
+      working-directory: ${{ env.GITHUB_WORKSPACE }}
+      run: ./GenerateProjects.bat
 
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
