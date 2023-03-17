@@ -1,9 +1,7 @@
 #pragma once
 
+#include "hnpch.h"
 #include "Hana/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Hana
 {

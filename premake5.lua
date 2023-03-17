@@ -19,6 +19,9 @@ project "Hana"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "hnpch.h"
+	pchsource "Hana/src/hnpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
