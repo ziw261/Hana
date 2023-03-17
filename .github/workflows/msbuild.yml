@@ -31,9 +31,12 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: set up premake and add to path
-      uses: premake/setup-premake@v1
+    - uses: abel0b/setup-premake@v2.2
+      with:
+        version: "5.0.0-beta2"
+        
     - name: configure
-      run: premake5 gmake
+      run: premake5 gmake2
         
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
