@@ -1,3 +1,4 @@
+#include "hnpch.h"
 #include "Application.h"
 
 #include "Hana/Events/ApplicationEvent.h"

@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Hana
 {
 	class HANA_API MouseMovedEvent : public Event
