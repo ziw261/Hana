@@ -11,6 +11,13 @@ workspace "Hana"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Hana/vendor/GLFW/include"
+
+-- Include the premake file in the glfw into here, c++ style copy paste include style
+include "Hana/vendor/GLFW"
+
 project "Hana"
 	location "Hana"
 	kind "SharedLib"
@@ -31,7 +38,14 @@ project "Hana"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
