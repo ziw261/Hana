@@ -4,11 +4,13 @@
 #include "Hana/Events/ApplicationEvent.h"
 #include "Hana/Log.h"
 
+#include <GLFW/glfw3.h>
+
 namespace Hana
 {
 	Application::Application()
 	{
-
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -18,16 +20,11 @@ namespace Hana
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1280, 720);
-		if (e.IsInCategory(EventCategoryApplication))
-		{ 
-			HN_TRACE(e);
-		}
-		if (e.IsInCategory(EventCategoryInput))
+		while (m_Running)
 		{
-			HN_TRACE(e);
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
+			m_Window->OnUpdate();
 		}
-
-		while(true);
 	}
 }
