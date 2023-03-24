@@ -4,3 +4,5 @@
 [submodule "Hana/vendor/GLFW"]
 	path = Hana/vendor/GLFW
 	url = https://github.com/GameDev-Shiki/glfw
+	branch = master
+	ignore = dirty
