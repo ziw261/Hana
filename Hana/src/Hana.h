@@ -3,6 +3,7 @@
 // For use by Hana Applications
 
 #include "Hana/Application.h"
+#include "Hana/Layer.h"
 #include "Hana/Log.h"
 
 // ---Entry Point---------------------------
