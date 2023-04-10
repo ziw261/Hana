@@ -5,6 +5,8 @@
 #include "Hana/Events/KeyEvent.h"
 #include "Hana/Events/MouseEvent.h"
 
+#include <glad/glad.h>
+
 namespace Hana
 {
 	static bool s_GLFWInitialized = false;
@@ -48,6 +50,8 @@ namespace Hana
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		HN_CORE_ASSERT(status, "Failed to initialize Glad!");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

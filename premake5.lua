@@ -14,9 +14,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Hana/vendor/GLFW/include"
+IncludeDir["Glad"] = "Hana/vendor/Glad/include"
 
 -- Include the premake file in the glfw into here, c++ style copy paste include style
 include "Hana/vendor/GLFW"
+include "Hana/vendor/Glad"
 
 project "Hana"
 	location "Hana"
@@ -39,12 +41,14 @@ project "Hana"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -56,7 +60,8 @@ project "Hana"
 		defines
 		{
 			"HN_PLATFORM_WINDOWS",
-			"HN_BUILD_DLL"
+			"HN_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
