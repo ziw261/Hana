@@ -6,3 +6,6 @@
 	url = https://github.com/GameDev-Shiki/glfw
 	branch = master
 	ignore = dirty
+[submodule "Hana/vendor/imgui"]
+	path = Hana/vendor/imgui
+	url = https://github.com/GameDev-Shiki/imgui

@@ -15,10 +15,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Hana/vendor/GLFW/include"
 IncludeDir["Glad"] = "Hana/vendor/Glad/include"
+IncludeDir["ImGui"] = "Hana/vendor/imgui"
 
 -- Include the premake file in the glfw into here, c++ style copy paste include style
 include "Hana/vendor/GLFW"
 include "Hana/vendor/Glad"
+include "Hana/vendor/imgui"
 
 project "Hana"
 	location "Hana"
@@ -42,13 +44,15 @@ project "Hana"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
