@@ -9,3 +9,5 @@
 [submodule "Hana/vendor/imgui"]
 	path = Hana/vendor/imgui
 	url = https://github.com/GameDev-Shiki/imgui
+	branch = master
+	ignore = dirty
