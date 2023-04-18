@@ -111,6 +111,7 @@ project "Sandbox"
 	{
 		"Hana/vendor/spdlog/include",
 		"Hana/src",
+		"Hana/vendor",
 		"%{IncludeDir.glm}",
 	}
 
