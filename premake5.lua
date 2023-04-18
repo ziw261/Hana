@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Hana/vendor/GLFW/include"
 IncludeDir["Glad"] = "Hana/vendor/Glad/include"
 IncludeDir["ImGui"] = "Hana/vendor/imgui"
+IncludeDir["glm"] = "Hana/vendor/glm"
 
 -- Include the premake file in the glfw into here, c++ style copy paste include style
 include "Hana/vendor/GLFW"
@@ -37,7 +38,9 @@ project "Hana"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
 	}
 
 	includedirs
@@ -46,7 +49,8 @@ project "Hana"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}",
 	}
 
 	links
@@ -65,7 +69,7 @@ project "Hana"
 		{
 			"HN_PLATFORM_WINDOWS",
 			"HN_BUILD_DLL",
-			"GLFW_INCLUDE_NONE"
+			"GLFW_INCLUDE_NONE",
 		}
 
 		postbuildcommands
@@ -106,7 +110,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Hana/vendor/spdlog/include",
-		"Hana/src"
+		"Hana/src",
+		"%{IncludeDir.glm}",
 	}
 
 	links
