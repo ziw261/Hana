@@ -7,6 +7,7 @@
 #include "Hana/Events/Event.h"
 #include "Hana/Events/ApplicationEvent.h"
 
+#include "Hana/ImGui/ImGuiLayer.h"
 
 namespace Hana
 {
@@ -30,6 +31,7 @@ namespace Hana
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:

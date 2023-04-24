@@ -1,5 +1,7 @@
 #include <Hana.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public Hana::Layer
 {
 public:
@@ -12,6 +14,14 @@ public:
 	{
 		if (Hana::Input::IsKeyPressed(HN_KEY_TAB))
 			HN_TRACE("Tab key is pressed (poll)!");
+	}
+
+	virtual void OnImGuiRender() override
+	{
+		// This won't work because of linking problems.
+		//ImGui::Begin("Test");
+		//ImGui::Text("Hello World");
+		//ImGui::End();
 	}
 
 	void OnEvent(Hana::Event& event) override
@@ -32,7 +42,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Hana::ImGuiLayer());
 	}
 
 	~Sandbox()
