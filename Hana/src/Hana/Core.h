@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef HN_PLATFORM_WINDOWS
+#if HN_DYNAMIC_LINK
 	#ifdef HN_BUILD_DLL
 		#define HANA_API __declspec(dllexport)
 	#else
 		#define HANA_API __declspec(dllimport)
 	#endif
+#else
+	#define HANA_API
+#endif
 #else
 	#error Hana only supports Windows!
 #endif
