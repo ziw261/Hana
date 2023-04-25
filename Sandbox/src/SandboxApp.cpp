@@ -18,10 +18,9 @@ public:
 
 	virtual void OnImGuiRender() override
 	{
-		// This won't work because of linking problems.
-		//ImGui::Begin("Test");
-		//ImGui::Text("Hello World");
-		//ImGui::End();
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
 	}
 
 	void OnEvent(Hana::Event& event) override
