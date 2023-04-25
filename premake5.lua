@@ -18,10 +18,12 @@ IncludeDir["Glad"] = "Hana/vendor/Glad/include"
 IncludeDir["ImGui"] = "Hana/vendor/imgui"
 IncludeDir["glm"] = "Hana/vendor/glm"
 
--- Include the premake file in the glfw into here, c++ style copy paste include style
-include "Hana/vendor/GLFW"
-include "Hana/vendor/Glad"
-include "Hana/vendor/imgui"
+group "Dependencies"
+	include "Hana/vendor/GLFW"
+	include "Hana/vendor/Glad"
+	include "Hana/vendor/imgui"
+
+group ""
 
 project "Hana"
 	location "Hana"
