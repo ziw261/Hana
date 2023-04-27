@@ -9,6 +9,8 @@
 
 #include "Hana/ImGui/ImGuiLayer.h"
 
+#include "Hana/Renderer/Shader.h"
+
 namespace Hana
 {
 	class HANA_API Application
@@ -36,6 +38,7 @@ namespace Hana
 		LayerStack m_LayerStack;
 
 		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 	private:
 		static Application* s_Instance;
 	};
