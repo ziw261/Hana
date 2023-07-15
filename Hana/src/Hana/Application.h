@@ -10,6 +10,7 @@
 #include "Hana/ImGui/ImGuiLayer.h"
 
 #include "Hana/Renderer/Buffer.h"
+#include "Hana/Renderer/OrthographicCamera.h"
 #include "Hana/Renderer/Shader.h"
 #include "Hana/Renderer/VertexArray.h"
 
@@ -44,6 +45,8 @@ namespace Hana
 
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};
