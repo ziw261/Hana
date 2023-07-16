@@ -9,14 +9,9 @@
 
 #include "Hana/ImGui/ImGuiLayer.h"
 
-#include "Hana/Renderer/Buffer.h"
-#include "Hana/Renderer/OrthographicCamera.h"
-#include "Hana/Renderer/Shader.h"
-#include "Hana/Renderer/VertexArray.h"
-
 namespace Hana
 {
-	class HANA_API Application
+	class Application
 	{
 	public:
 		Application();
@@ -40,13 +35,6 @@ namespace Hana
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
-
-		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};
