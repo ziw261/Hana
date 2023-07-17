@@ -7,6 +7,8 @@
 #include "Hana/Events/Event.h"
 #include "Hana/Events/ApplicationEvent.h"
 
+#include "Hana/Core/Timestep.h"
+
 #include "Hana/ImGui/ImGuiLayer.h"
 
 namespace Hana
@@ -34,7 +36,7 @@ namespace Hana
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};

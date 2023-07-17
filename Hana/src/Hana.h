@@ -6,6 +6,8 @@
 #include "Hana/Layer.h"
 #include "Hana/Log.h"
 
+#include "Hana/Core/Timestep.h"
+
 #include "Hana/Input.h"
 #include "Hana/KeyCodes.h"
 #include "Hana/MouseButtonCodes.h"
