@@ -7,9 +7,4 @@ namespace Hana
 		: m_DebugName(debugName)
 	{
 	}
-
-	Layer::~Layer()
-	{
-
-	}
 }
