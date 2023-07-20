@@ -27,11 +27,6 @@ namespace Hana
 		PushOverlay(m_ImGuiLayer);
 	}
 
-	Application::~Application()
-	{
-
-	}
-
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
