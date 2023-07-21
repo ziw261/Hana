@@ -24,7 +24,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f,
 		};
 
-		std::shared_ptr<Hana::VertexBuffer> vertexBuffer;
+		Hana::Ref<Hana::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Hana::VertexBuffer::Create(vertices, sizeof(vertices)));
 		Hana::BufferLayout layout =
 		{
@@ -36,7 +36,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		std::shared_ptr<Hana::IndexBuffer> indexBuffer;
+		Hana::Ref<Hana::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Hana::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -50,7 +50,7 @@ public:
 			-0.5f,  0.5f, 0.0f
 		};
 
-		std::shared_ptr<Hana::VertexBuffer> squareVB;
+		Hana::Ref<Hana::VertexBuffer> squareVB;
 		squareVB.reset(Hana::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVB->SetLayout(
 			{
@@ -59,7 +59,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<Hana::IndexBuffer> squareIB;
+		Hana::Ref<Hana::IndexBuffer> squareIB;
 		squareIB.reset(Hana::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -196,11 +196,11 @@ public:
 	}
 
 private:
-	std::shared_ptr<Hana::Shader> m_Shader;
-	std::shared_ptr<Hana::VertexArray> m_VertexArray;
+	Hana::Ref<Hana::Shader> m_Shader;
+	Hana::Ref<Hana::VertexArray> m_VertexArray;
 
-	std::shared_ptr<Hana::Shader> m_FlatColorShader;
-	std::shared_ptr<Hana::VertexArray> m_SquareVA;
+	Hana::Ref<Hana::Shader> m_FlatColorShader;
+	Hana::Ref<Hana::VertexArray> m_SquareVA;
 
 	Hana::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
