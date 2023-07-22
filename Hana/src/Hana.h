@@ -20,6 +20,7 @@
 
 #include "Hana/Renderer/Buffer.h"
 #include "Hana/Renderer/Shader.h"
+#include "Hana/Renderer/Texture.h"
 #include "Hana/Renderer/VertexArray.h"
 
 #include "Hana/Renderer/OrthographicCamera.h"
