@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Hana/Window.h"
+#include "Hana/Core/Window.h"
 #include "Hana/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
@@ -30,7 +30,7 @@ namespace Hana
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
-		GraphicsContext* m_Context;
+		Scope<GraphicsContext> m_Context;
 
 		struct WindowData
 		{

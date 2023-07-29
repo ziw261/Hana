@@ -1,12 +1,12 @@
 #include "hnpch.h"
 #include "WindowsInput.h"
 
-#include "Hana/Application.h"
+#include "Hana/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace Hana
 {
-	Input* Input::s_Instance = new WindowsInput();
+	Scope<Input> Input::s_Instance = CreateScope<WindowsInput>();
 
 	bool WindowsInput::IsKeyPressedImpl(int keycode)
 	{
